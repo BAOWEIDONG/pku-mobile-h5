@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A2E4A" />
+  <meta name="description" content="北大医疗集团医疗服务网络组织架构手机版，支持按地区筛选与机构搜索。" />
+  <title>北大医疗集团｜手机版</title>
+  <link rel="stylesheet" href="./mobile.css" />
+</head>
+<body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16.2 16.2 21 21"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5.5-8 12-8 12S4 15.5 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h4l2 5-3 2a13 13 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V8l8-4 8 4v13"/><path d="M9 21v-5h6v5"/><path d="M12 7v4M10 9h4"/><path d="M3 21h18"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-3v19"/><path d="M12 8h8v13"/><path d="M8 7h.01M8 11h.01M8 15h.01M16 12h.01M16 16h.01"/><path d="M3 21h18"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m14 7 5 5-5 5"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.3"/><path d="M20 4v7h-7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M10 12v3a4 4 0 0 0 8 0v-2"/><circle cx="18" cy="10" r="2"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8 9h8M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C12 4 5 8 5 15c0 3 2 5 5 5 7 0 10-8 10-16Z"/><path d="M4 21c3-6 8-10 14-13"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 6a3 3 0 0 1 0 6"/><path d="M18 14a5 5 0 0 1 3 6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  </svg>
+
+  <div class="mobile-shell">
+    <header class="m-hero">
+      <div class="m-topbar">
+        <a class="m-brand" href="./mobile.html" aria-label="北大医疗集团">
+          <img src="./assets/logo.png" alt="北大医疗 PKU HEALTHCARE 中国平安集团成员" />
+        </a>
+        <a class="m-team-nav" href="./team.html">
+          查看医护团队
+          <svg class="ic ic-12"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+      <p class="m-eyebrow">PKU HEALTHCARE NETWORK</p>
+      <h1>北大医疗集团</h1>
+      <p class="m-sub">集团组织架构与成员机构名录</p>
+      <blockquote class="m-slogan">
+        <span>“</span>一个人的健康是企业福利，<br />一群人的健康是企业生产力。<span>”</span>
+      </blockquote>
+      <div class="m-stats">
+        <a class="m-stat-link" href="#mOrgSection"><b>6</b>大地区</a>
+        <a class="m-stat-link" href="#mDirectory"><b>12</b>家机构</a>
+        <a class="m-stat-link" href="#mDirectory" data-open-type-filter><b>4</b>类机构</a>
+        <a class="m-stat-link" href="#mOrgSection"><b>6</b>座城市</a>
+      </div>
+      <div class="m-team-stats" aria-label="医疗团队数据">
+        <a href="./team.html?view=doctors"><b>726</b><small>医师</small></a>
+        <a href="./team.html?view=experts"><b>57</b><small>专家</small></a>
+        <a href="./team.html?view=nursing"><b>107</b><small>专科护士</small></a>
+        <a href="./team.html?view=departments"><b>70</b><small>科室</small></a>
+      </div>
+    </header>
+
+    <main class="m-main">
+      <section class="m-hospital-intro">
+        <div class="m-section-head">
+          <div>
+            <p class="m-eyebrow">ABOUT PKU IH</p>
+            <h2>医院介绍</h2>
+          </div>
+        </div>
+        <div class="m-hospital-card">
+          <div class="m-hospital-photo">
+            <img src="./assets/hospital-intro.webp" alt="北京大学国际医院院区" loading="lazy" />
+          </div>
+          <p>北京大学国际医院座落在北京市昌平区中关村生命科学园的北京大学医疗城内，是一所非营利性综合医院，也是北京大学第八临床医学院。</p>
+          <p>医院在医疗、教学和科研方面得到北京大学医学部及其附属医院系统支持，传承北医系统的学科优势，建设与国际接轨的医院管理模式。</p>
+          <p>医院总建筑面积 44 万平方米，总投资 70 亿元人民币，核定床位 1800 张，设有 50 余个医疗临床和医技科室，提供与国际接轨的医疗服务。</p>
+          <div class="m-hospital-tags">
+            <span>非营利性综合医院</span>
+            <span>北京大学第八临床医学院</span>
+          </div>
+          <div class="m-hospital-stats">
+            <span><b>44</b><small>万平方米</small></span>
+            <span><b>70</b><small>亿元投资</small></span>
+            <span><b>1800</b><small>核定床位</small></span>
+            <span><b>50+</b><small>临床医技科室</small></span>
+          </div>
+
+          <div class="m-hospital-history">
+            <div class="m-hospital-subhead">
+              <b>发展历程</b>
+              <small>2002 — 2022</small>
+            </div>
+            <div class="m-history-list">
+              <div><b>2022</b><p>北大医疗正式成为平安集团的重要成员</p></div>
+              <div><b>2021</b><p>平安集团签署方正重整投资协议</p></div>
+              <div><b>2014</b><p>北医系六大直属医院派出 10+ 优势科室，北京大学国际医院开业</p></div>
+              <div><b>2003</b><p>北大医疗（原北大国际医院集团）成立</p></div>
+              <div><b>2002</b><p>北京大学为主体申请筹建北京大学国际医院</p></div>
+            </div>
+          </div>
+
+          <div class="m-hospital-vision">
+            <div class="m-hospital-subhead">
+              <b>愿景与战略</b>
+              <small>VISION &amp; STRATEGY</small>
+            </div>
+            <p class="m-vision-lead">致力于打造有平安特色的、中国领先的医疗管理集团</p>
+            <div class="m-vision-grid">
+              <span><b>客户体量</b><small>覆盖全国 2.4 亿线上线下客户</small></span>
+              <span><b>生态协同</b><small>平安综合金融生态，医险协同、医养协同</small></span>
+              <span><b>管理精益</b><small>前中后台专业化管理，成本、风险高效控制</small></span>
+              <span><b>科技赋能</b><small>赋能智慧医院与医疗大数据应用</small></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-org-section" id="mOrgSection">
+        <div class="m-section-head">
+          <div>
+            <p class="m-eyebrow">GROUP STRUCTURE</p>
+            <h2>集团组织架构</h2>
+          </div>
+          <span class="m-count"><b>12</b> 家</span>
+        </div>
+        <div class="m-org-card">
+          <button class="m-org-root" type="button" data-region="all">
+            <span class="m-root-mark"><svg class="ic ic-14"><use href="#i-plus"/></svg></span>
+            <span><b>北大医疗集团</b><small>PKU HEALTHCARE</small></span>
+            <span class="m-root-total"><b>12</b><small>家</small></span>
+          </button>
+          <div class="m-org-grid" id="mOrgGrid"></div>
+        </div>
+      </section>
+
+      <section class="m-directory" id="mDirectory">
+        <div class="m-dir-head">
+          <div>
+            <p class="m-eyebrow">MEMBER INSTITUTIONS</p>
+            <h2>成员机构</h2>
+            <p class="m-result" id="mResult">共 12 家机构</p>
+          </div>
+          <button class="m-reset" id="mReset" type="button">
+            <svg class="ic ic-12"><use href="#i-reset"/></svg>重置
+          </button>
+        </div>
+
+        <div class="m-tools" id="mTools">
+          <div class="m-tool-row">
+            <div class="m-search">
+              <svg class="ic ic-17"><use href="#i-search"/></svg>
+              <input id="mSearch" type="search" placeholder="搜索医院、地址或电话" autocomplete="off" aria-label="搜索机构" />
+              <button class="m-clear" id="mClear" type="button" aria-label="清空搜索">
+                <svg class="ic ic-13"><use href="#i-close"/></svg>
+              </button>
+            </div>
+            <button class="m-filter-btn" id="mFilterBtn" type="button">
+              <svg class="ic ic-16"><use href="#i-filter"/></svg>
+              <span>筛选</span>
+              <i id="mFilterBadge" hidden>1</i>
+            </button>
+          </div>
+        </div>
+
+        <div class="m-list" id="mList"></div>
+        <div class="m-empty" id="mEmpty" hidden>
+          <span><svg class="ic ic-24"><use href="#i-search"/></svg></span>
+          <b>没有找到匹配机构</b>
+          <p>换个关键词，或清除筛选后再试。</p>
+          <button id="mEmptyReset" type="button">查看全部机构</button>
+        </div>
+      </section>
+
+      <footer class="m-footer">
+        <img class="m-footer-logo" src="./assets/logo.png" alt="北大医疗 PKU HEALTHCARE 中国平安集团成员" />
+        <p>了解更多信息，咨询企康专员</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="m-backdrop" id="mBackdrop"></div>
+
+  <section class="m-sheet" id="mFilterSheet" aria-hidden="true" aria-label="筛选机构">
+    <span class="m-sheet-handle"></span>
+    <button class="m-sheet-close" id="mFilterClose" type="button" aria-label="关闭">
+      <svg class="ic ic-15"><use href="#i-close"/></svg>
+    </button>
+    <div class="m-sheet-head">
+      <p class="m-eyebrow">FILTER</p>
+      <h2>筛选机构</h2>
+      <p>按机构类型缩小范围</p>
+    </div>
+    <div class="m-sheet-body">
+      <div class="m-type-options" id="mTypeOptions"></div>
+    </div>
+    <div class="m-sheet-footer">
+      <button class="m-sheet-reset" id="mFilterReset" type="button">重置</button>
+      <button class="m-sheet-apply" id="mFilterApply" type="button">查看结果</button>
+    </div>
+  </section>
+
+  <section class="m-sheet detail-sheet" id="mDetailSheet" aria-hidden="true" aria-label="机构详情">
+    <span class="m-sheet-handle"></span>
+    <button class="m-sheet-close" id="mDetailClose" type="button" aria-label="关闭">
+      <svg class="ic ic-15"><use href="#i-close"/></svg>
+    </button>
+    <div id="mDetailContent"></div>
+  </section>
+
+  <div class="m-toast" id="mToast" role="status" aria-live="polite"></div>
+
+  <script src="./back-nav.js"></script>
+  <script src="./mobile.js"></script>
+</body>
+</html>

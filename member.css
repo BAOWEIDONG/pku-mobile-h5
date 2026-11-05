@@ -1,0 +1,469 @@
+/* =========================================================
+   北京大学国际医院 · 医疗团队成员介绍
+   ========================================================= */
+
+:root {
+  --ink: #123a57;
+  --ink-soft: #4f7893;
+  --sky: #1e9ad0;
+  --sky-deep: #0f6f9f;
+  --sky-soft: #e6f7fe;
+  --paper: #ffffff;
+  --gold: #a46f24;
+  --line: rgba(18, 70, 105, 0.11);
+  --sans: "PingFang SC", "HarmonyOS Sans SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #e7f6fd;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 80% 0%, rgba(91, 190, 235, 0.17), transparent 28rem),
+    #e7f6fd;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+svg {
+  display: block;
+}
+
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.ic {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ic-14 { width: 14px; height: 14px; }
+
+.member-shell {
+  width: 100%;
+  max-width: 760px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #f4fbff;
+  box-shadow: 0 0 70px rgba(18, 72, 103, 0.12);
+}
+
+.member-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: calc(13px + env(safe-area-inset-top)) 18px 12px;
+  background: #f4fbff;
+}
+
+.member-brand img {
+  display: block;
+  width: 138px;
+  height: auto;
+}
+
+.member-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 10px;
+  color: #1e739b;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(42, 167, 224, 0.22);
+  border-radius: 999px;
+}
+
+.member-main {
+  padding: 0 14px 26px;
+}
+
+.member-loading {
+  padding: 60px 20px;
+  color: #7793a3;
+  text-align: center;
+}
+
+/* Profile hero */
+
+.member-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 18px;
+  background:
+    radial-gradient(80% 90% at 100% 0%, rgba(126, 210, 244, 0.34), transparent 64%),
+    linear-gradient(155deg, #f7fdff, #dff3fc);
+  border: 1px solid rgba(42, 167, 224, 0.14);
+  border-radius: 18px;
+}
+
+.member-hero::after {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -65px;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  border: 1px solid rgba(42, 167, 224, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 32px rgba(42, 167, 224, 0.04);
+}
+
+.member-profile {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.member-photo {
+  position: relative;
+  display: grid;
+  flex: none;
+  width: 112px;
+  height: 142px;
+  overflow: hidden;
+  place-items: center;
+  color: #1e8dba;
+  font-family: var(--serif);
+  font-size: 38px;
+  background: #e5f6fd;
+  border: 1px solid rgba(42, 167, 224, 0.15);
+  border-radius: 12px;
+}
+
+.member-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-photo-fallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+
+.member-profile-copy {
+  flex: 1;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.member-eyebrow {
+  margin-bottom: 5px;
+  color: #258ab2;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.member-profile h1 {
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.member-role {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+  color: #1e8dba;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.member-badge {
+  padding: 2px 6px;
+  color: #8d5a14;
+  font-size: 10px;
+  font-weight: 700;
+  background: #f9edda;
+  border: 1px solid rgba(183, 134, 78, 0.22);
+  border-radius: 3px;
+}
+
+.member-tag {
+  padding: 2px 6px;
+  color: #80602f;
+  font-size: 10px;
+  font-weight: 500;
+  background: #fbf1dd;
+  border-radius: 3px;
+}
+
+.member-dept {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 5px;
+  color: #4f7893;
+  font-size: 11px;
+}
+
+.member-dept .ic {
+  flex: none;
+  margin-top: 2px;
+  color: #76a1b5;
+}
+
+.member-hospital {
+  color: #79909e;
+  font-size: 10px;
+}
+
+.member-hero-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 7px;
+  margin-top: 15px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(18, 70, 105, 0.09);
+}
+
+.member-action {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 39px;
+  color: #1e88b6;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(42, 167, 224, 0.2);
+  border-radius: 7px;
+}
+
+.member-action.primary {
+  color: #fff;
+  background: var(--sky);
+  border-color: var(--sky);
+}
+
+/* Biography */
+
+.member-section {
+  margin-top: 12px;
+  padding: 17px;
+  background: var(--paper);
+  border: 1px solid rgba(18, 70, 105, 0.09);
+  border-radius: 14px;
+}
+
+.member-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9px;
+  color: #2b6685;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.member-section h2::before {
+  content: "";
+  width: 3px;
+  height: 15px;
+  background: var(--sky);
+  border-radius: 2px;
+}
+
+.member-section p {
+  margin-bottom: 8px;
+  color: #546f80;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.member-section p:last-child {
+  margin-bottom: 0;
+}
+
+.member-section.specialty p {
+  color: #315f79;
+  font-size: 14px;
+}
+
+.member-list {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member-list li {
+  position: relative;
+  padding-left: 13px;
+  color: #5d7787;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.member-list li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: #61a9c7;
+  border-radius: 50%;
+}
+
+.member-empty {
+  margin-bottom: 0;
+  color: #95a5ae;
+  font-size: 13px;
+}
+
+.member-source {
+  margin: 14px 2px 0;
+  color: #8da1ad;
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.member-footer {
+  padding: 8px 18px calc(24px + env(safe-area-inset-bottom));
+  text-align: center;
+}
+
+.member-footer img {
+  display: block;
+  width: 112px;
+  height: auto;
+  margin: 0 auto 7px;
+}
+
+.member-footer p {
+  margin-bottom: 0;
+  color: #8ca0ad;
+  font-size: 10px;
+}
+
+.member-error {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.member-error h1 {
+  margin-bottom: 8px;
+  font-family: var(--serif);
+  font-size: 25px;
+}
+
+.member-error p {
+  margin-bottom: 16px;
+  color: #78909e;
+  font-size: 13px;
+}
+
+.member-error a {
+  display: inline-flex;
+  height: 38px;
+  align-items: center;
+  padding: 0 16px;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  background: var(--sky);
+  border-radius: 999px;
+}
+
+@media (max-width: 360px) {
+  .member-main {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .member-hero {
+    padding: 14px;
+  }
+
+  .member-photo {
+    width: 94px;
+    height: 122px;
+  }
+
+  .member-profile h1 {
+    font-size: 26px;
+  }
+
+  .member-section {
+    padding: 14px;
+  }
+}
+
+@media (min-width: 760px) {
+  body {
+    padding: 24px 0;
+  }
+
+  .member-shell {
+    min-height: calc(100dvh - 48px);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .member-profile {
+    gap: 22px;
+  }
+
+  .member-photo {
+    width: 150px;
+    height: 186px;
+  }
+
+  .member-profile h1 {
+    font-size: 36px;
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#EAF8FE" />
+  <meta name="description" content="北京大学国际医院医疗团队成员介绍。" />
+  <title>成员介绍 · 北京大学国际医院</title>
+  <link rel="stylesheet" href="./member.css" />
+</head>
+<body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m10 17-5-5 5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m14 7 5 5-5 5"/></symbol>
+    <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V8l8-4 8 4v13"/><path d="M9 21v-5h6v5"/><path d="M12 7v4M10 9h4"/><path d="M3 21h18"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  </svg>
+
+  <div class="member-shell">
+    <header class="member-topbar">
+      <a class="member-brand" href="./team.html" aria-label="返回医疗团队">
+        <img src="./assets/logo.png" alt="北大医疗 PKU HEALTHCARE 中国平安集团成员" />
+      </a>
+      <a class="member-back" href="./team.html">
+        <svg class="ic ic-14"><use href="#i-back"/></svg>返回医疗团队
+      </a>
+    </header>
+
+    <main class="member-main" id="memberContent">
+      <div class="member-loading">正在加载成员介绍…</div>
+    </main>
+
+    <footer class="member-footer">
+      <img src="./assets/logo.png" alt="北大医疗 PKU HEALTHCARE 中国平安集团成员" />
+      <p>北京大学国际医院 · 医疗团队</p>
+    </footer>
+  </div>
+
+  <script src="./back-nav.js"></script>
+  <script src="./medical-team-data.js"></script>
+  <script src="./operations-team-data.js"></script>
+  <script src="./member-details.js"></script>
+  <script src="./member.js"></script>
+</body>
+</html>

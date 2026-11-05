@@ -1,0 +1,503 @@
+/* =========================================================
+   北京大学国际医院 · 科室介绍
+   ========================================================= */
+
+:root {
+  --ink: #123a57;
+  --sky: #1e9ad0;
+  --gold: #a46f24;
+  --sans: "PingFang SC", "HarmonyOS Sans SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #e7f6fd;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 80% 0%, rgba(91, 190, 235, 0.17), transparent 28rem),
+    #e7f6fd;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+p,
+h1,
+h2 {
+  margin-top: 0;
+}
+
+svg {
+  display: block;
+}
+
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.ic {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ic-14 { width: 14px; height: 14px; }
+
+.dept-shell {
+  width: 100%;
+  max-width: 760px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #f4fbff;
+  box-shadow: 0 0 70px rgba(18, 72, 103, 0.12);
+}
+
+.dept-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: calc(13px + env(safe-area-inset-top)) 18px 12px;
+}
+
+.dept-brand img {
+  display: block;
+  width: 138px;
+  height: auto;
+}
+
+.dept-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 10px;
+  color: #1e739b;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(42, 167, 224, 0.22);
+  border-radius: 999px;
+}
+
+.dept-main {
+  padding: 0 14px 26px;
+}
+
+.dept-loading {
+  padding: 60px 20px;
+  color: #7793a3;
+  text-align: center;
+}
+
+.dept-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background:
+    radial-gradient(80% 90% at 100% 0%, rgba(126, 210, 244, 0.3), transparent 64%),
+    linear-gradient(155deg, #f7fdff, #e2f4fc);
+  border: 1px solid rgba(42, 167, 224, 0.14);
+  border-radius: 18px;
+}
+
+.dept-hero::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(42, 167, 224, 0.13);
+  border-radius: 50%;
+  box-shadow: 0 0 0 30px rgba(42, 167, 224, 0.035);
+}
+
+.dept-category {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+  padding: 3px 8px;
+  color: #1e88b6;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(42, 167, 224, 0.18);
+  border-radius: 999px;
+}
+
+.dept-hero h1 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.dept-hero .dept-sub {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 14px;
+  color: #7390a1;
+  font-size: 11px;
+}
+
+.dept-hero-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 7px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(18, 70, 105, 0.09);
+}
+
+.dept-action {
+  display: inline-flex;
+  flex: 1;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #1e88b6;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(42, 167, 224, 0.2);
+  border-radius: 7px;
+}
+
+.dept-action.primary {
+  color: #fff;
+  background: var(--sky);
+  border-color: var(--sky);
+}
+
+.dept-section {
+  margin-top: 12px;
+  padding: 17px;
+  background: #fff;
+  border: 1px solid rgba(18, 70, 105, 0.09);
+  border-radius: 14px;
+}
+
+.dept-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  color: #2b6685;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.dept-section h2::before {
+  content: "";
+  width: 3px;
+  height: 15px;
+  background: var(--sky);
+  border-radius: 2px;
+}
+
+.dept-section p {
+  margin-bottom: 10px;
+  color: #546f80;
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.dept-section p:last-child {
+  margin-bottom: 0;
+}
+
+.dept-empty {
+  color: #8fa3af !important;
+  font-size: 13px !important;
+}
+
+.dept-source {
+  margin: 14px 2px 0;
+  color: #8da1ad;
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.dept-footer {
+  padding: 8px 18px calc(24px + env(safe-area-inset-bottom));
+  text-align: center;
+}
+
+.dept-footer img {
+  display: block;
+  width: 112px;
+  height: auto;
+  margin: 0 auto 7px;
+}
+
+.dept-footer p {
+  margin-bottom: 0;
+  color: #8ca0ad;
+  font-size: 10px;
+}
+
+.dept-error {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.dept-error h1 {
+  margin-bottom: 8px;
+  font-family: var(--serif);
+  font-size: 25px;
+}
+
+.dept-error p {
+  margin-bottom: 16px;
+  color: #78909e;
+  font-size: 13px;
+}
+
+.dept-error a {
+  display: inline-flex;
+  height: 38px;
+  align-items: center;
+  padding: 0 16px;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  background: var(--sky);
+  border-radius: 999px;
+}
+
+@media (max-width: 360px) {
+  .dept-main {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .dept-hero {
+    padding: 16px;
+  }
+
+  .dept-hero h1 {
+    font-size: 30px;
+  }
+
+  .dept-section {
+    padding: 14px;
+  }
+}
+
+@media (min-width: 760px) {
+  body {
+    padding: 24px 0;
+  }
+
+  .dept-shell {
+    min-height: calc(100dvh - 48px);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .dept-hero h1 {
+    font-size: 42px;
+  }
+}
+
+/* Department features, leaders and doctor team */
+
+.dept-features {
+  display: grid;
+  gap: 8px;
+}
+
+.dept-feature {
+  padding: 13px;
+  background: #f4fbfe;
+  border: 1px solid rgba(42, 167, 224, 0.12);
+  border-radius: 10px;
+}
+
+.dept-feature-tag {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 2px 6px;
+  color: #287b9b;
+  font-size: 9px;
+  background: #e4f5fd;
+  border-radius: 3px;
+}
+
+.dept-feature h3 {
+  margin-bottom: 6px;
+  color: #235d7a;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.dept-feature p {
+  margin-bottom: 0;
+  color: #587485;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.dept-leaders {
+  display: grid;
+  gap: 8px;
+}
+
+.dept-leader-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px;
+  color: inherit;
+  text-decoration: none;
+  background: #f4fbfe;
+  border: 1px solid rgba(42, 167, 224, 0.12);
+  border-radius: 10px;
+}
+
+.dept-leader-copy {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 2px;
+}
+
+.dept-leader-copy b {
+  color: #235d7a;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.dept-leader-copy > span {
+  color: #2e7a99;
+  font-size: 11px;
+}
+
+.dept-leader-copy small {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 3px;
+  color: #7f98a6;
+  font-size: 9px;
+}
+
+.dept-person-photo {
+  position: relative;
+  display: grid;
+  flex: none;
+  width: 52px;
+  height: 64px;
+  overflow: hidden;
+  place-items: center;
+  color: #1e8dba;
+  font-family: var(--serif);
+  font-size: 20px;
+  background: #e5f6fd;
+  border-radius: 7px;
+}
+
+.dept-person-photo.is-large {
+  width: 72px;
+  height: 90px;
+  font-size: 27px;
+}
+
+.dept-person-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dept-person-fallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+
+.dept-doctors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.dept-doctor-card {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  color: inherit;
+  text-decoration: none;
+  background: #f7fcff;
+  border: 1px solid rgba(18, 70, 105, 0.075);
+  border-radius: 8px;
+}
+
+.dept-doctor-copy {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.dept-doctor-copy b {
+  overflow: hidden;
+  color: #2b5f79;
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dept-doctor-copy span {
+  overflow: hidden;
+  color: #7b93a1;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+  .dept-doctors {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,1440 @@
+/* =========================================================
+   北京大学国际医院 · 医疗团队专家列表
+   ========================================================= */
+
+:root {
+  --ink: #123a57;
+  --ink-soft: #4f7893;
+  --navy: #0f6f9f;
+  --sky: #1e9ad0;
+  --sky-light: #e7f7fe;
+  --cream: #f2fbff;
+  --paper: #ffffff;
+  --line: rgba(18, 70, 105, 0.12);
+  --gold: #a46f24;
+  --sans: "PingFang SC", "HarmonyOS Sans SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #e8f7fd;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 80% 0%, rgba(91, 190, 235, 0.16), transparent 28rem),
+    #e8f7fd;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  padding: 0;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+p,
+h1,
+h2 {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+svg {
+  display: block;
+}
+
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.ic {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ic-12 { width: 12px; height: 12px; }
+.ic-13 { width: 13px; height: 13px; }
+.ic-14 { width: 14px; height: 14px; }
+.ic-18 { width: 18px; height: 18px; }
+.ic-24 { width: 24px; height: 24px; }
+
+.team-shell {
+  width: 100%;
+  max-width: 980px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  overflow-x: clip;
+  background: var(--cream);
+  box-shadow: 0 0 80px rgba(18, 84, 120, 0.13);
+}
+
+/* Hero */
+
+.team-hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(14px + env(safe-area-inset-top)) 22px 0;
+  background:
+    radial-gradient(45% 40% at 100% 0%, rgba(126, 210, 244, 0.55), transparent 66%),
+    radial-gradient(48% 40% at 0% 100%, rgba(171, 226, 248, 0.65), transparent 68%),
+    linear-gradient(160deg, #f8fdff 0%, #e1f5fd 46%, #c4ecfa 100%);
+  border-radius: 0 0 26px 26px;
+}
+
+.team-hero::after {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -90px;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  border: 1px solid rgba(42, 167, 224, 0.16);
+  border-radius: 50%;
+  box-shadow: 0 0 0 42px rgba(42, 167, 224, 0.05), 0 0 0 85px rgba(42, 167, 224, 0.035);
+}
+
+.team-topbar,
+.team-hero-copy,
+.team-summary {
+  position: relative;
+  z-index: 2;
+}
+
+.team-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.team-brand img {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+.team-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 10px;
+  color: #1e739b;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(42, 167, 224, 0.22);
+  border-radius: 999px;
+}
+
+.team-hero-copy {
+  margin-top: 30px;
+}
+
+.team-eyebrow {
+  margin-bottom: 7px;
+  color: #238ab4;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.team-hero h1 {
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.team-sub {
+  margin-bottom: 22px;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.team-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 17px;
+  margin: 0 -22px;
+  padding: 13px 22px 15px;
+  background: rgba(255, 255, 255, 0.42);
+  border-top: 1px solid rgba(42, 167, 224, 0.18);
+}
+
+.team-summary span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: #4f7893;
+  font-size: 13px;
+}
+
+.team-summary b {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.team-summary small {
+  font-size: 13px;
+}
+
+.team-stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: #4f7893;
+  text-decoration: none;
+}
+
+.team-stat:active b {
+  color: #7a4f18;
+}
+
+.team-summary-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: auto;
+  color: #1e9ad0;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Sticky tools */
+
+.team-tools {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 9px 16px 8px;
+  background: rgba(244, 252, 255, 0.96);
+  border-bottom: 1px solid rgba(18, 70, 105, 0.08);
+  box-shadow: 0 4px 16px rgba(18, 70, 105, 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.team-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 11px;
+  background: #fbfeff;
+  border: 1px solid rgba(58, 169, 214, 0.28);
+  border-radius: 9px;
+}
+
+.team-search > .ic {
+  color: #4f8ca8;
+}
+
+.team-search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  color: var(--ink);
+  font-size: 16px;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+.team-search input::placeholder {
+  color: #91a6b4;
+}
+
+.team-search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.team-clear {
+  display: none;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  color: #5d7889;
+  background: #e5f4fb;
+  border-radius: 50%;
+}
+
+.team-clear.is-visible {
+  display: grid;
+}
+
+.role-chips {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  margin-top: 7px;
+  padding-bottom: 1px;
+  scrollbar-width: none;
+}
+
+.role-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.role-chip {
+  flex: none;
+  height: 31px;
+  padding: 0 11px;
+  color: #5b7b8d;
+  font-size: 11px;
+  white-space: nowrap;
+  background: #f9fdff;
+  border: 1px solid rgba(18, 70, 105, 0.11);
+  border-radius: 999px;
+}
+
+.role-chip b {
+  margin-left: 3px;
+  color: #8d5a14;
+  font-family: var(--serif);
+  font-size: 12px;
+}
+
+.role-chip.is-active {
+  color: #fff;
+  background: var(--sky);
+  border-color: var(--sky);
+}
+
+.role-chip.is-active b {
+  color: #f6e4c2;
+}
+
+/* Main */
+
+.team-main {
+  padding: 16px 16px 30px;
+}
+
+.team-result-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.team-result-row p {
+  margin-bottom: 0;
+  color: #3f647b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.team-result-row > span {
+  color: #8ba0ad;
+  font-size: 11px;
+}
+
+.expert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.expert-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: var(--paper);
+  border: 1px solid rgba(18, 70, 105, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(18, 70, 105, 0.04);
+}
+
+.expert-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 14px;
+  left: 14px;
+  height: 2px;
+  background: var(--accent, #4a9bc4);
+  opacity: 0.75;
+  border-radius: 0 0 2px 2px;
+}
+
+.expert-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.expert-avatar {
+  position: relative;
+  display: grid;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  place-items: center;
+  color: var(--accent, #2a8fc2);
+  font-family: var(--serif);
+  font-size: 19px;
+  background: var(--accent-soft, #e5f5fc);
+  border-radius: 50%;
+}
+
+.expert-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expert-avatar-fallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+
+.expert-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.expert-name h2 {
+  margin-bottom: 2px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.expert-role {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent, #2a8fc2);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.expert-tag {
+  padding: 2px 6px;
+  color: #80602f;
+  font-size: 10px;
+  font-weight: 500;
+  background: #fbf1dd;
+  border-radius: 3px;
+}
+
+.expert-dept {
+  flex: none;
+  max-width: 45%;
+  padding: 4px 7px;
+  color: #4f7893;
+  font-size: 10px;
+  text-align: right;
+  background: #eef8fd;
+  border-radius: 4px;
+}
+
+.expert-hospital {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding-top: 9px;
+  color: #8a9ba7;
+  font-size: 11px;
+  border-top: 1px solid rgba(18, 70, 105, 0.07);
+}
+
+.expert-hospital b {
+  color: #4f7187;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.expert-hospital .ic {
+  color: #7fa4b7;
+}
+
+.expert-specialty {
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: 50px;
+  margin: 9px 0 10px;
+  color: #607b8b;
+  font-size: 12px;
+  line-height: 1.7;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.expert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  align-self: flex-start;
+  margin-top: auto;
+  color: #1e88b6;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(30, 136, 182, 0.25);
+  padding-bottom: 2px;
+}
+
+/* Role accents */
+
+.expert-card.role-chief {
+  --accent: #2a8fc2;
+  --accent-soft: #e4f4fc;
+}
+
+.expert-card.role-deputy {
+  --accent: #2f8f83;
+  --accent-soft: #e3f5f1;
+}
+
+.expert-card.role-attending {
+  --accent: #b7864e;
+  --accent-soft: #fbf3e4;
+}
+
+.expert-card.role-doctor {
+  --accent: #6e8296;
+  --accent-soft: #edf3f7;
+}
+
+.expert-badge {
+  padding: 2px 6px;
+  color: #8d5a14;
+  font-size: 10px;
+  font-weight: 700;
+  background: #f8ecd9;
+  border: 1px solid rgba(183, 134, 78, 0.22);
+  border-radius: 3px;
+}
+
+/* Nursing summary */
+
+.team-nursing {
+  margin-bottom: 16px;
+  padding: 15px;
+  background:
+    radial-gradient(85% 100% at 100% 0%, rgba(126, 210, 244, 0.22), transparent 65%),
+    #f0f9fe;
+  border: 1px solid rgba(42, 167, 224, 0.16);
+  border-radius: 14px;
+}
+
+.team-nursing-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.team-nursing-eyebrow {
+  margin-bottom: 3px;
+  color: #2a88ad;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.team-nursing h2 {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.team-nursing-head > span {
+  color: #7c96a4;
+  font-size: 10px;
+}
+
+.team-nursing-desc {
+  margin: 8px 0 12px;
+  color: #637f8f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.team-nursing-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.team-nursing-stats span {
+  display: grid;
+  gap: 1px;
+  padding: 8px 7px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(42, 167, 224, 0.13);
+  border-radius: 8px;
+}
+
+.team-nursing-stats b {
+  color: #a46f24;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.team-nursing-stats small {
+  color: #718c9c;
+  font-size: 9px;
+}
+
+.team-nursing > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 10px;
+  color: #1e88b6;
+  font-size: 11px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(30, 136, 182, 0.25);
+  padding-bottom: 2px;
+}
+
+/* Load more */
+
+.team-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.team-more {
+  height: 40px;
+  padding: 0 20px;
+  color: #1e88b6;
+  font-size: 12px;
+  background: #effaff;
+  border: 1px solid rgba(42, 167, 224, 0.28);
+  border-radius: 999px;
+}
+
+/* Empty / source */
+
+.team-empty {
+  padding: 38px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px dashed rgba(58, 169, 214, 0.35);
+  border-radius: 14px;
+}
+
+.team-empty > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 10px;
+  place-items: center;
+  color: #3e87a7;
+  background: #e7f5fc;
+  border-radius: 50%;
+}
+
+.team-empty b {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.team-empty p {
+  margin-bottom: 14px;
+  color: #8297a6;
+  font-size: 12px;
+}
+
+.team-empty button {
+  height: 36px;
+  padding: 0 14px;
+  color: #fff;
+  font-size: 11px;
+  background: var(--sky);
+  border-radius: 999px;
+}
+
+.team-source {
+  margin-top: 22px;
+  padding: 14px;
+  background: #edf8fe;
+  border-left: 3px solid #48a9d2;
+  border-radius: 0 9px 9px 0;
+}
+
+.team-source > span {
+  display: block;
+  margin-bottom: 4px;
+  color: #2a7d9f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.team-source p {
+  margin-bottom: 7px;
+  color: #6f8796;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.team-source a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #1e88b6;
+  font-size: 11px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(30, 136, 182, 0.25);
+  padding-bottom: 2px;
+}
+
+.team-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.team-footer {
+  padding: 20px 18px calc(22px + env(safe-area-inset-bottom));
+  text-align: center;
+  border-top: 1px solid rgba(18, 70, 105, 0.08);
+}
+
+.team-footer img {
+  display: block;
+  width: 116px;
+  height: auto;
+  margin: 0 auto 6px;
+}
+
+.team-footer p {
+  margin-bottom: 0;
+  color: #8298a6;
+  font-size: 10px;
+}
+
+@media (max-width: 720px) {
+  .team-hero {
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 0 0 22px 22px;
+  }
+
+  .team-brand img {
+    width: 124px;
+  }
+
+  .team-hero h1 {
+    font-size: 34px;
+  }
+
+  .team-hero-copy {
+    margin-top: 24px;
+  }
+
+  .team-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 16px;
+    margin-right: -16px;
+    margin-left: -16px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .team-summary b {
+    font-size: 22px;
+  }
+
+  .team-summary-jump {
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-left: 0;
+  }
+
+  .team-main {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .expert-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .expert-card {
+    padding: 14px;
+  }
+
+  .expert-name h2 {
+    font-size: 20px;
+  }
+
+  .expert-specialty {
+    font-size: 13px;
+    -webkit-line-clamp: 4;
+  }
+
+  .expert-hospital,
+  .expert-role {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    padding: 24px 0;
+  }
+
+  .team-shell {
+    min-height: calc(100dvh - 48px);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .expert-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   Team categories / role counts / department view
+   ========================================================= */
+
+.team-browse {
+  padding: 12px 16px 0;
+  background: rgba(244, 252, 255, 0.82);
+  border-bottom: 1px solid rgba(18, 70, 105, 0.07);
+}
+
+.team-categories {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.team-category {
+  display: flex;
+  min-height: 56px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1px;
+  padding: 8px 10px;
+  color: var(--cat);
+  text-align: left;
+  background: var(--cat-soft);
+  border: 1px solid color-mix(in srgb, var(--cat) 18%, transparent);
+  border-radius: 10px;
+}
+
+.team-category span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.team-category b {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.team-category.is-active {
+  color: #fff;
+  background: var(--cat);
+  border-color: var(--cat);
+}
+
+.team-category.is-active b {
+  color: #f8e7c8;
+}
+
+.cat-experts {
+  --cat: #466c9e;
+  --cat-soft: #eaf0f8;
+}
+
+.cat-doctors {
+  --cat: #1e8fbf;
+  --cat-soft: #e4f5fd;
+}
+
+.cat-nursing {
+  --cat: #2f8f83;
+  --cat-soft: #e3f5f1;
+}
+
+.team-role-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0 12px;
+}
+
+.role-summary-label {
+  margin-right: 1px;
+  color: #718c9c;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.role-summary-chip {
+  height: 31px;
+  padding: 0 9px;
+  color: var(--cat);
+  font-size: 11px;
+  background: var(--cat-soft);
+  border: 1px solid color-mix(in srgb, var(--cat) 18%, transparent);
+  border-radius: 999px;
+}
+
+.role-summary-chip b {
+  margin-left: 3px;
+  font-family: var(--serif);
+  font-size: 12px;
+}
+
+.role-summary-chip.is-active {
+  color: #fff;
+  background: var(--cat);
+  border-color: var(--cat);
+}
+
+.role-summary-chip.is-active b {
+  color: #f8e7c8;
+}
+
+/* Department drill-down */
+
+.team-dept-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.team-back-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #2f7f9f;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.team-dept-head p {
+  margin-bottom: 0;
+  color: #8a9ba7;
+  font-size: 11px;
+}
+
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.dept-card {
+  display: flex;
+  min-height: 74px;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 12px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid rgba(18, 70, 105, 0.1);
+  border-left: 3px solid #4a9bc4;
+  border-radius: 10px;
+}
+
+.dept-card-main {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 2px;
+}
+
+.dept-card-name {
+  overflow: hidden;
+  color: #2f5f78;
+  font-size: 12px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dept-card-count {
+  color: #8198a6;
+  font-size: 10px;
+}
+
+.dept-card-count b {
+  color: #a46f24;
+  font-family: var(--serif);
+  font-size: 14px;
+}
+
+.dept-card .ic {
+  flex: none;
+  color: #9bb4c2;
+}
+
+.team-dept-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  color: #4f7893;
+  font-size: 11px;
+  background: #edf8fe;
+  border-radius: 7px;
+}
+
+.team-dept-filter b {
+  color: #245d7b;
+}
+
+.team-dept-filter button {
+  flex: none;
+  color: #1e88b6;
+  font-size: 10px;
+}
+
+@media (max-width: 720px) {
+  .team-browse {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .team-category {
+    min-height: 54px;
+    padding: 7px 8px;
+  }
+
+  .team-category span {
+    font-size: 11px;
+  }
+
+  .team-category b {
+    font-size: 18px;
+  }
+
+  .team-role-summary {
+    padding-top: 9px;
+    padding-bottom: 11px;
+  }
+
+  .role-summary-chip {
+    height: 30px;
+    padding: 0 8px;
+    font-size: 10.5px;
+  }
+
+  .dept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dept-card {
+    min-height: 64px;
+  }
+
+  .team-dept-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+
+/* Department categories and text-only cards */
+
+.dept-categories {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 11px;
+}
+
+.dept-category-tab {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 7px;
+  color: #4d7890;
+  font-size: 10px;
+  font-weight: 600;
+  background: #eef8fd;
+  border: 1px solid rgba(42, 167, 224, 0.14);
+  border-radius: 8px;
+}
+
+.dept-category-tab b {
+  color: #a46f24;
+  font-family: var(--serif);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.dept-category-tab.is-active {
+  color: #fff;
+  background: #1e8fbf;
+  border-color: #1e8fbf;
+}
+
+.dept-category-tab.is-active b {
+  color: #f8e7c8;
+}
+
+.dept-card {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dept-card-desc {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #8a9da8;
+  font-size: 10px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.dept-card-main {
+  gap: 3px;
+}
+
+/* Align the nurse and other top figures consistently */
+
+.team-summary {
+  align-items: center;
+}
+
+.team-stat {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  line-height: 1.15;
+}
+
+.team-stat b,
+.team-stat small {
+  line-height: 1.15;
+}
+
+.role-summary-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.team-category b,
+.team-summary b,
+.team-nursing-stats b,
+.role-summary-chip b,
+.dept-card b,
+.dept-category-tab b {
+  font-family: var(--serif);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 360px) {
+  .dept-category-tab {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 9px;
+  }
+}
+
+/* Department icons and compact cards */
+
+.ic-18 {
+  width: 18px;
+  height: 18px;
+}
+
+.dept-card {
+  min-height: 64px;
+  gap: 9px;
+  padding: 10px 12px;
+}
+
+.dept-card.cat-center { --dept: #1e8fbf; --dept-soft: #e5f7fe; }
+.dept-card.cat-special { --dept: #4d6fa3; --dept-soft: #edf2fa; }
+.dept-card.cat-clinic { --dept: #2f8f83; --dept-soft: #e6f6f2; }
+
+.dept-icon {
+  display: grid;
+  flex: none;
+  width: 33px;
+  height: 33px;
+  place-items: center;
+  color: var(--dept);
+  background: var(--dept-soft);
+  border-radius: 9px;
+}
+
+.dept-card-main {
+  min-width: 0;
+}
+
+.dept-card-name {
+  overflow: hidden;
+  color: #2f5f78;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Nursing official photo */
+
+.team-nursing-photo {
+  overflow: hidden;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  background: #e7f6fd;
+}
+
+.team-nursing-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.dept-card.is-disabled {
+  cursor: default;
+  opacity: 0.72;
+  background: #f8fbfd;
+  border-left-color: #b7c7d1;
+}
+
+.dept-card-note {
+  display: block;
+  margin-top: 1px;
+  color: #9aaab4;
+  font-size: 9px;
+}
+
+/* Operations team */
+
+.team-categories {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cat-operations {
+  --cat: #a8743d;
+  --cat-soft: #fbf2e7;
+}
+
+.team-role-summary.cat-operations {
+  --cat: #a8743d;
+  --cat-soft: #fbf2e7;
+}
+
+.expert-grid.is-ops {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ops-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid rgba(18, 70, 105, 0.09);
+  border-left: 3px solid var(--ops, #a8743d);
+  border-radius: 11px;
+}
+
+.ops-card.role-supervisor { --ops: #466c9e; --ops-soft: #edf2f9; }
+.ops-card.role-operations { --ops: #a8743d; --ops-soft: #fbf2e7; }
+.ops-card.role-doctor { --ops: #1e8fbf; --ops-soft: #e5f6fd; }
+.ops-card.role-health { --ops: #2f8f83; --ops-soft: #e6f6f2; }
+.ops-card.role-nutrition { --ops: #b27a32; --ops-soft: #fdf3e5; }
+.ops-card.role-rehab { --ops: #6e8296; --ops-soft: #eef3f7; }
+
+.ops-avatar {
+  display: grid;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: var(--ops);
+  font-family: var(--serif);
+  font-size: 18px;
+  background: var(--ops-soft);
+  border-radius: 50%;
+}
+
+.ops-copy {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.ops-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ops-name b {
+  overflow: hidden;
+  color: #245d7b;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ops-name span {
+  flex: none;
+  padding: 1px 4px;
+  color: #8a9da8;
+  font-size: 8px;
+  background: #f0f6fa;
+  border-radius: 3px;
+}
+
+.ops-role {
+  margin: 0;
+  color: var(--ops);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.ops-copy small {
+  overflow: hidden;
+  color: #8399a6;
+  font-size: 9.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ops-badge {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 1px 4px;
+  color: #a08a73;
+  font-size: 7px;
+  background: #fbf5ed;
+  border-radius: 3px;
+}
+
+@media (max-width: 720px) {
+  .team-categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .expert-grid.is-ops {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Five operations role categories */
+
+.cat-supervisor {
+  --cat: #466c9e;
+  --cat-soft: #edf2f9;
+}
+
+.cat-health {
+  --cat: #2f8f83;
+  --cat-soft: #e6f6f2;
+}
+
+.cat-nutrition {
+  --cat: #b27a32;
+  --cat-soft: #fdf3e5;
+}
+
+.cat-rehab {
+  --cat: #6e8296;
+  --cat-soft: #eef3f7;
+}
+
+.ops-card {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ops-card:active {
+  opacity: 0.82;
+}

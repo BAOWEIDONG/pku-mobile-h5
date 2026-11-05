@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#EAF8FE" />
+  <meta name="description" content="北京大学国际医院科室介绍。" />
+  <title>科室介绍 · 北京大学国际医院</title>
+  <link rel="stylesheet" href="./department.css" />
+</head>
+<body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m10 17-5-5 5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m14 7 5 5-5 5"/></symbol>
+    <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V8l8-4 8 4v13"/><path d="M9 21v-5h6v5"/><path d="M12 7v4M10 9h4"/><path d="M3 21h18"/></symbol>
+  </svg>
+
+  <div class="dept-shell">
+    <header class="dept-topbar">
+      <a class="dept-brand" href="./team.html?view=departments" aria-label="返回科室列表">
+        <img src="./assets/logo.png" alt="北大医疗 PKU HEALTHCARE 中国平安集团成员" />
+      </a>
+      <a class="dept-back" href="./team.html?view=departments">
+        <svg class="ic ic-14"><use href="#i-back"/></svg>返回科室列表
+      </a>
+    </header>
+
+    <main class="dept-main" id="deptContent">
+      <div class="dept-loading">正在加载科室介绍…</div>
+    </main>
+
+    <footer class="dept-footer">
+      <img src="./assets/logo.png" alt="北大医疗 PKU HEALTHCARE 中国平安集团成员" />
+      <p>北京大学国际医院 · 科室介绍</p>
+    </footer>
+  </div>
+
+  <script src="./back-nav.js"></script>
+  <script src="./departments-data.js"></script>
+  <script src="./department.js"></script>
+</body>
+</html>

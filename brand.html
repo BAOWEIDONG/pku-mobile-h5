@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#EAF8FE" />
+  <meta name="description" content="北大医疗医疗服务网络品牌展示：医院规模、医师资源与全周期医疗服务。" />
+  <title>北大医疗 · 医疗服务网络</title>
+  <link rel="stylesheet" href="./brand.css" />
+</head>
+<body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m14 7 5 5-5 5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V8l8-4 8 4v13"/><path d="M9 21v-5h6v5"/><path d="M12 7v4M10 9h4"/><path d="M3 21h18"/></symbol>
+  </svg>
+
+  <div class="brand-shell">
+    <header class="brand-topbar">
+      <a href="./brand.html" class="brand-logo" aria-label="北大医疗">
+        <img src="./assets/logo.png" alt="北大医疗 PKU HEALTHCARE 中国平安集团成员" />
+      </a>
+      <nav>
+        <a href="./team.html">医疗团队</a>
+        <a href="./mobile.html">机构网络</a>
+      </nav>
+    </header>
+
+    <section class="brand-hero">
+      <div class="brand-hero-copy">
+        <p class="brand-eyebrow">PKU HEALTHCARE · MEDICAL NETWORK</p>
+        <h1>让优质医疗<br /><em>触手可及</em></h1>
+        <p class="brand-lead">从综合医院到康复、专科与健康管理，北大医疗以全周期医疗服务网络，守护每一个家庭的健康托付。</p>
+        <div class="brand-actions">
+          <a class="brand-btn primary" href="./team.html">查看医疗团队 <svg class="ic ic-14"><use href="#i-arrow"/></svg></a>
+          <a class="brand-btn" href="./mobile.html">浏览机构网络</a>
+        </div>
+      </div>
+      <div class="brand-orbit" aria-hidden="true">
+        <span class="orbit-ring ring-1"></span>
+        <span class="orbit-ring ring-2"></span>
+        <span class="orbit-core"><b>+</b><small>北大医疗</small></span>
+        <span class="orbit-node n-beijing">北京</span>
+        <span class="orbit-node n-tianjin">天津</span>
+        <span class="orbit-node n-shandong">山东</span>
+        <span class="orbit-node n-shanxi">山西</span>
+        <span class="orbit-node n-hunan">湖南</span>
+        <span class="orbit-node n-guangdong">广东</span>
+      </div>
+      <div class="brand-hero-stats">
+        <span><b>6</b><small>大地区</small></span>
+        <span><b>12</b><small>家机构</small></span>
+        <span><b>6</b><small>座城市</small></span>
+        <span><b>4</b><small>类机构</small></span>
+      </div>
+    </section>
+
+    <main>
+      <section class="brand-section brand-intro">
+        <p class="brand-kicker">SCALE & COVERAGE</p>
+        <h2>一张覆盖全周期的<br />医疗服务网络</h2>
+        <p class="brand-text">以北京为起点，布局天津、山东、山西、湖南、广东，形成综合医院、康复医院、专科医院与健康管理中心协同的医疗服务网络。</p>
+        <div class="brand-number-row">
+          <div><b>6</b><span>大地区</span></div>
+          <div><b>12</b><span>家成员机构</span></div>
+          <div><b>6</b><span>座城市</span></div>
+          <div><b>4</b><span>类机构</span></div>
+        </div>
+      </section>
+
+      <section class="brand-section">
+        <div class="brand-section-head">
+          <div>
+            <p class="brand-kicker">HOSPITAL NETWORK</p>
+            <h2>医疗网络</h2>
+          </div>
+          <span>6 大地区 · 12 家机构</span>
+        </div>
+        <div class="network-list" id="networkList"></div>
+      </section>
+
+      <section class="brand-section brand-doctors">
+        <div class="brand-section-head">
+          <div>
+            <p class="brand-kicker">MEDICAL TALENT</p>
+            <h2>医师资源</h2>
+          </div>
+          <a href="./team.html">全部成员 <svg class="ic ic-12"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="brand-doctor-stats">
+          <div><b>726</b><span>位医师</span></div>
+          <div><b>57</b><span>位专家</span></div>
+          <div><b>70</b><span>个科室</span></div>
+        </div>
+        <p class="brand-note">多学科医师团队，覆盖综合诊疗、专科诊疗、康复与健康管理。</p>
+        <div class="featured-experts" id="featuredExperts"></div>
+        <a class="brand-link" href="./team.html">查看全部医疗团队 <svg class="ic ic-12"><use href="#i-arrow"/></svg></a>
+      </section>
+
+      <section class="brand-section">
+        <div class="brand-section-head">
+          <div>
+            <p class="brand-kicker">DEPARTMENT COVERAGE</p>
+            <h2>学科覆盖</h2>
+          </div>
+          <span>70 个科室</span>
+        </div>
+        <div class="department-pills" id="departmentPills"></div>
+      </section>
+
+      <section class="brand-section brand-nursing">
+        <p class="brand-kicker">INTERNATIONAL NURSING</p>
+        <h2>国际护理</h2>
+        <p class="brand-text">护理垂直管理，2024 年牵头成立北大医疗国际护理中心，以专业化、国际化护理服务守护全生命周期健康。</p>
+        <div class="nursing-stats">
+          <div><b>107</b><span>专科护士</span></div>
+          <div><b>61%</b><span>本科及以上</span></div>
+          <div><b>1</b><span>博士</span></div>
+          <div><b>15</b><span>硕士</span></div>
+        </div>
+      </section>
+
+      <section class="brand-closing">
+        <img src="./assets/logo.png" alt="北大医疗 PKU HEALTHCARE 中国平安集团成员" />
+        <p>一个人的健康是企业福利<br />一群人的健康是企业生产力</p>
+        <div class="brand-actions">
+          <a class="brand-btn primary" href="./team.html">认识我们的医师</a>
+          <a class="brand-btn" href="./mobile.html">查看机构目录</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="brand-footer">
+      <span>北大医疗集团 · 企康办</span>
+      <span>医疗网络品牌展示</span>
+    </footer>
+  </div>
+
+  <script src="./back-nav.js"></script>
+  <script src="./medical-team-data.js"></script>
+  <script src="./brand.js"></script>
+</body>
+</html>

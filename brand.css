@@ -1,0 +1,821 @@
+/* =========================================================
+   北大医疗 · 医疗服务网络品牌展示
+   ========================================================= */
+
+:root {
+  --ink: #103a57;
+  --ink-soft: #53788e;
+  --sky: #1e9ad0;
+  --sky-deep: #0d6f9f;
+  --ice: #e9f8ff;
+  --paper: #ffffff;
+  --gold: #a46f24;
+  --line: rgba(18, 70, 105, 0.11);
+  --sans: "PingFang SC", "HarmonyOS Sans SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #e4f5fd;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 85% 0%, rgba(91, 190, 235, 0.18), transparent 28rem),
+    #e4f5fd;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+svg {
+  display: block;
+}
+
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.ic {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ic-12 { width: 12px; height: 12px; }
+.ic-14 { width: 14px; height: 14px; }
+
+.brand-shell {
+  width: 100%;
+  max-width: 760px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #f7fcff;
+  box-shadow: 0 0 80px rgba(18, 72, 103, 0.13);
+}
+
+.brand-topbar {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: calc(14px + env(safe-area-inset-top)) 18px 10px;
+}
+
+.brand-logo img {
+  display: block;
+  width: 136px;
+  height: auto;
+}
+
+.brand-topbar nav {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-topbar nav a {
+  color: #2c6f8d;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(44, 111, 141, 0.25);
+  padding-bottom: 2px;
+}
+
+/* Hero */
+
+.brand-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 20px 0;
+  background:
+    radial-gradient(72% 64% at 95% 4%, rgba(112, 203, 241, 0.42), transparent 68%),
+    linear-gradient(160deg, #f7fdff 0%, #e2f5fd 62%, #d8f1fb 100%);
+}
+
+.brand-hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -90px;
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(30, 154, 208, 0.13);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 46px rgba(30, 154, 208, 0.035),
+    0 0 0 92px rgba(30, 154, 208, 0.025);
+}
+
+.brand-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.brand-eyebrow,
+.brand-kicker {
+  margin-bottom: 8px;
+  color: #2589b2;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.brand-hero h1 {
+  margin-bottom: 11px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 47px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.brand-hero h1 em {
+  color: #1b8dbb;
+  font-style: normal;
+}
+
+.brand-lead {
+  max-width: 29em;
+  margin-bottom: 16px;
+  color: #52778c;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.brand-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.brand-btn {
+  display: inline-flex;
+  height: 39px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 15px;
+  color: #2b718f;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(42, 167, 224, 0.25);
+  border-radius: 999px;
+}
+
+.brand-btn.primary {
+  color: #fff;
+  background: var(--sky);
+  border-color: var(--sky);
+}
+
+/* Orbit visual */
+
+.brand-orbit {
+  position: relative;
+  height: 252px;
+  margin: 12px -6px 0;
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(30, 154, 208, 0.22);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring-1 {
+  width: 158px;
+  height: 158px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.ring-2 {
+  width: 246px;
+  height: 246px;
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.orbit-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 102px;
+  height: 102px;
+  place-content: center;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(145deg, #1e9ad0, #0d709f);
+  border-radius: 50%;
+  box-shadow: 0 12px 30px rgba(13, 112, 159, 0.24);
+  transform: translate(-50%, -50%);
+}
+
+.orbit-core b {
+  display: block;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 0.9;
+}
+
+.orbit-core small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.orbit-node {
+  position: absolute;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: #236b8a;
+  font-size: 10px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(42, 167, 224, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(18, 86, 118, 0.06);
+}
+
+.n-beijing { top: 13px; left: 50%; transform: translateX(-50%); }
+.n-tianjin { top: 61px; right: 33px; }
+.n-shandong { bottom: 48px; right: 24px; }
+.n-shanxi { bottom: 5px; left: 50%; transform: translateX(-50%); }
+.n-hunan { bottom: 48px; left: 24px; }
+.n-guangdong { top: 61px; left: 33px; }
+
+.brand-hero-stats {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 -20px;
+  padding: 12px 12px 14px;
+  background: rgba(255, 255, 255, 0.48);
+  border-top: 1px solid rgba(42, 167, 224, 0.16);
+}
+
+.brand-hero-stats span {
+  display: grid;
+  justify-items: center;
+  gap: 0;
+}
+
+.brand-hero-stats b {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.brand-hero-stats small {
+  color: #4f7893;
+  font-size: 9px;
+}
+
+/* Sections */
+
+.brand-section {
+  padding: 30px 20px 0;
+}
+
+.brand-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.brand-section-head h2,
+.brand-intro h2 {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.brand-section-head > span {
+  flex: none;
+  padding-bottom: 3px;
+  color: #8b9da7;
+  font-size: 10px;
+}
+
+.brand-section-head > a,
+.brand-link {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 3px;
+  color: #1e88b6;
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(30, 136, 182, 0.25);
+  padding-bottom: 2px;
+}
+
+.brand-intro {
+  padding-top: 34px;
+}
+
+.brand-intro .brand-kicker {
+  margin-bottom: 8px;
+}
+
+.brand-intro h2 {
+  font-size: 28px;
+}
+
+.brand-text {
+  margin: 12px 0 0;
+  color: #5d7b8d;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.brand-number-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-number-row div {
+  padding: 14px 4px 13px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+}
+
+.brand-number-row div:last-child {
+  border-right: 0;
+}
+
+.brand-number-row b {
+  display: block;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 27px;
+  line-height: 1.1;
+}
+
+.brand-number-row span {
+  display: block;
+  margin-top: 2px;
+  color: #688294;
+  font-size: 9px;
+}
+
+/* Network */
+
+.network-list {
+  display: grid;
+  gap: 8px;
+}
+
+.network-card {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid rgba(18, 70, 105, 0.09);
+  border-radius: 12px;
+}
+
+.network-index {
+  flex: none;
+  color: #a9c0cc;
+  font-family: var(--serif);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.network-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.network-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.network-head b {
+  color: #245d7b;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.network-head span {
+  flex: none;
+  color: #a46f24;
+  font-size: 10px;
+}
+
+.network-names {
+  color: #78909e;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+/* Doctors */
+
+.brand-doctors {
+  position: relative;
+  margin-top: 30px;
+  padding-top: 26px;
+  background:
+    radial-gradient(70% 40% at 100% 0%, rgba(126, 210, 244, 0.2), transparent 70%),
+    #f1faff;
+  border-top: 1px solid rgba(42, 167, 224, 0.09);
+}
+
+.brand-doctor-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 10px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-doctor-stats div {
+  padding: 13px 4px 12px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+}
+
+.brand-doctor-stats div:last-child {
+  border-right: 0;
+}
+
+.brand-doctor-stats b {
+  display: block;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 27px;
+  line-height: 1.1;
+}
+
+.brand-doctor-stats span {
+  display: block;
+  margin-top: 2px;
+  color: #678294;
+  font-size: 9px;
+}
+
+.brand-note {
+  margin: 8px 0 14px;
+  color: #7d929f;
+  font-size: 10px;
+}
+
+.featured-experts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.featured-expert {
+  display: flex;
+  min-width: 0;
+  gap: 9px;
+  overflow: hidden;
+  padding: 10px;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(18, 70, 105, 0.08);
+  border-radius: 10px;
+}
+
+.featured-photo {
+  position: relative;
+  display: grid;
+  flex: none;
+  width: 44px;
+  height: 54px;
+  overflow: hidden;
+  place-items: center;
+  color: #1e8dba;
+  font-family: var(--serif);
+  font-size: 18px;
+  background: #e7f6fd;
+  border-radius: 7px;
+}
+
+.featured-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-copy {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.featured-copy b {
+  display: block;
+  overflow: hidden;
+  color: #245d7b;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.featured-copy span {
+  display: block;
+  overflow: hidden;
+  margin-top: 2px;
+  color: #1e88b6;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.featured-copy small {
+  display: block;
+  overflow: hidden;
+  margin-top: 4px;
+  color: #91a2ac;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-link {
+  margin-top: 14px;
+}
+
+/* Departments */
+
+.department-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.department-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 7px 10px;
+  color: #49758b;
+  font-size: 10px;
+  background: #fff;
+  border: 1px solid rgba(18, 70, 105, 0.09);
+  border-radius: 999px;
+}
+
+.department-pill b {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 12px;
+}
+
+/* Nursing */
+
+.brand-nursing {
+  margin-top: 30px;
+  padding: 26px 20px;
+  background:
+    radial-gradient(80% 90% at 100% 0%, rgba(112, 203, 241, 0.2), transparent 62%),
+    #eaf9fe;
+  border-top: 1px solid rgba(42, 167, 224, 0.1);
+  border-bottom: 1px solid rgba(42, 167, 224, 0.1);
+}
+
+.brand-nursing h2 {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.nursing-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.nursing-stats div {
+  padding: 10px 6px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(42, 167, 224, 0.13);
+  border-radius: 8px;
+}
+
+.nursing-stats b {
+  display: block;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.nursing-stats span {
+  display: block;
+  margin-top: 2px;
+  color: #658193;
+  font-size: 8px;
+}
+
+/* Closing */
+
+.brand-closing {
+  margin: 30px 20px 0;
+  padding: 25px 18px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(18, 70, 105, 0.09);
+  border-radius: 16px;
+}
+
+.brand-closing img {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin: 0 auto 13px;
+}
+
+.brand-closing > p {
+  margin-bottom: 17px;
+  color: #3c687f;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.brand-closing .brand-actions {
+  justify-content: center;
+}
+
+.brand-source {
+  margin: 18px 20px 26px;
+  color: #91a4af;
+  font-size: 9px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.brand-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 18px calc(23px + env(safe-area-inset-bottom));
+  color: #8ea3af;
+  font-size: 9px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 360px) {
+  .brand-hero {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .brand-hero h1 {
+    font-size: 41px;
+  }
+
+  .brand-hero-stats {
+    margin-right: -16px;
+    margin-left: -16px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .brand-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .brand-doctors,
+  .brand-nursing {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .featured-experts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 760px) {
+  body {
+    padding: 24px 0;
+  }
+
+  .brand-shell {
+    min-height: calc(100dvh - 48px);
+    border-radius: 24px;
+  }
+
+  .brand-hero {
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+
+  .brand-hero-stats {
+    margin-right: -34px;
+    margin-left: -34px;
+    padding-right: 26px;
+    padding-left: 26px;
+  }
+
+  .brand-hero h1 {
+    font-size: 56px;
+  }
+
+  .brand-orbit {
+    height: 290px;
+  }
+
+  .ring-1 { width: 176px; height: 176px; }
+  .ring-2 { width: 276px; height: 276px; }
+
+  .brand-section {
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+
+  .featured-experts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .brand-nursing {
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+
+  .brand-closing,
+  .brand-source {
+    margin-right: 34px;
+    margin-left: 34px;
+  }
+}
+.featured-fallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
